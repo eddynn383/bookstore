@@ -1,0 +1,262 @@
+/* === Variable Section === */
+$primary: #3DB498;
+$secondary: #E0A44B;
+$dark: #2D2D2D;
+$light: #F4F4F4;
+
+$border-radius: .5rem;
+
+/* === Accessibility Section === */
+
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    border: 0 !important;
+}
+
+/* === Custom Buttons Section === */
+
+.btn.btn-profile {
+    background-color: rgba(140, 140, 140, .2);
+    transition: background-color .3s ease-in-out;
+}
+
+.btn.btn-profile:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.btn.btn-shopping {
+    border: 2px solid var(--bs-primary);
+    color: var(--bs-primary);
+    position: relative;
+    overflow: visible;
+    padding: 5px;
+    transition: .3s ease-in-out;
+    z-index: 1;
+}
+
+.btn.btn-shopping:hover {
+    color: white;
+    border-color: transparent;
+}
+
+.btn.btn-shopping:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background-color: var(--bs-primary);
+    transform: scale(0);
+    transition: transform .3s ease-in-out;
+    border-radius: 50%;z-index: -1;
+}
+
+.btn.btn-shopping:hover:before {
+    transform: scale(1);
+}
+
+.btn.btn-shopping .count-items {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--bs-secondary);
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 14px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.btn-transparent:focus {
+    box-shadow: none;
+}
+
+
+/* === Navigation Section === */
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav--main .nav_level1 {
+    display: flex;
+}
+
+.nav--main .nav_level1 > li {
+    padding: 0 10px;
+}
+
+.nav--main a {
+    text-decoration: none;
+}
+
+.nav--profile .nav_level1 {
+    width: 100%;
+    padding: .5rem 0;
+}
+
+.nav--profile .nav_level1 a {
+    text-decoration: none;
+}
+
+.nav--profile .nav_level1 > li > a {
+    color: white;
+    display: block;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color .3s ease-in-out;
+}
+
+.nav--profile .nav_level1 > li > a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -10px;
+    right: calc(100% + 10px);
+    visibility: hidden;
+    opacity: 0;
+    background-color: var(--bs-primary);
+    transition: .3s ease-in-out;
+    border-radius: 0.5rem;
+    z-index: -1;
+}
+
+.nav--profile .nav_level1 > li > a:hover:before {
+    right: -10px;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* === Header Section === */
+
+.header {
+    display: flex;
+    height: 80px;
+    background-color: var(--bs-gray-dark);
+    padding: 10px 0;
+    align-items: center;
+}
+
+.logo {
+    display: inline-block;
+    width: 130px;
+}
+
+/* === Action Section === */
+
+.action-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.action-btn {
+    position: relative;
+}
+
+.action-panel {
+    min-width: 300px;
+    padding: 20px;
+    background-color: var(--bs-gray-dark);
+    border: 2px solid var(--bs-primary);
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+
+.action-panel:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent var(--bs-primary) transparent;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+// .action-panel_no-user {
+
+// }
+
+.action-panel_no-user .action-panel_text {
+    font-size: 0.75rem;
+    color: white;
+    padding: 0 0 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.action-panel_no-user .action-panel_btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0 0;
+}
+
+.action-panel_no-user .action-panel_btns-separator {
+    font-size: 0.75rem;
+    color: white;
+    width: 60px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.action-panel .action-panel_no-user .btn {
+    width: calc(50% - 30px);
+}
+
+.action-panel .action-panel_row--message {
+    padding: .5rem 0 1rem;
+    border-bottom: 1px solid rgba(121, 121, 121, 0.3);
+}
+
+.action-panel .action-panel_row--logout {
+    padding: 1rem 0 .5rem;
+    border-top: 1px solid rgba(121, 121, 121, 0.3);
+}
+
+/* === Banner Section === */
+
+.banner {
+    position: relative;
+    height: 400px;
+    z-index: 1;
+}
+
+.banner:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.BrainhubCarousel__arrows {
+    background-color: var(--bs-primary);
+    border-radius: 50%;
+}
+
+// Import Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap.scss";
